@@ -5,6 +5,9 @@ import {
   IonItem,
   IonLabel,
   IonThumbnail,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
 } from '@ionic/react';
 import './Playlist.css';
 
@@ -64,8 +67,17 @@ const recentSongs = [
 const Playlist: React.FC = () => {
   return (
     <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Ostatnio Grane</IonTitle>
+        </IonToolbar>
+      </IonHeader>
       <IonContent fullscreen className="playlist-content">
-        <h1 className="playlist-title">Ostatnio Grane</h1>
+        <IonHeader collapse="condense">
+          <IonToolbar>
+            <IonTitle size="large">Ostatnio Grane</IonTitle>
+          </IonToolbar>
+        </IonHeader>
         
         <IonList className="playlist-list">
           {recentSongs.map((song) => (

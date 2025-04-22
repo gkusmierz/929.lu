@@ -5,7 +5,10 @@ import {
   IonTextarea,
   IonInput,
   IonButton,
-  IonLabel
+  IonLabel,
+  IonHeader,
+  IonToolbar,
+  IonTitle
 } from '@ionic/react';
 import './Contact.css';
 
@@ -27,7 +30,17 @@ const Contact: React.FC = () => {
 
   return (
     <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Contact Us</IonTitle>
+        </IonToolbar>
+      </IonHeader>
       <IonContent fullscreen className="contact-content">
+        <IonHeader collapse="condense">
+          <IonToolbar>
+            <IonTitle size="large">Contact Us</IonTitle>
+          </IonToolbar>
+        </IonHeader>
         <div className="contact-container">
           <h1 className="contact-title">Contact Us</h1>
           

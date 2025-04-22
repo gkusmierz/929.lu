@@ -1,4 +1,4 @@
-import { IonContent, IonPage, IonIcon, IonButton } from '@ionic/react';
+import { IonContent, IonPage, IonIcon, IonButton, IonHeader, IonToolbar, IonTitle } from '@ionic/react';
 import { play, pauseCircle, thumbsUpOutline, thumbsDownOutline } from 'ionicons/icons';
 import { useState } from 'react';
 import './PlayerHome.css';
@@ -19,7 +19,17 @@ const PlayerHome: React.FC = () => {
 
   return (
     <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Radio Player</IonTitle>
+        </IonToolbar>
+      </IonHeader>
       <IonContent fullscreen className="player-content">
+        <IonHeader collapse="condense">
+          <IonToolbar>
+            <IonTitle size="large">Radio Player</IonTitle>
+          </IonToolbar>
+        </IonHeader>
         <div className="player-container">
           <div className="album-cover">
             <img src={currentSong.cover} alt={`${currentSong.album} cover`} />
