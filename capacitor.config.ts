@@ -7,6 +7,9 @@ const config: CapacitorConfig = {
   ios: {
     scheme: 'App929',
     backgroundColor: '#ffffff'
+  },
+  android: {
+    backgroundColor: '#ffffff'
   }
 };
 

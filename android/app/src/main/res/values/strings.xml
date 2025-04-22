@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">929.lu</string>
+    <string name="title_activity_main">929.lu</string>
+    <string name="package_name">com.radio929.app</string>
+    <string name="custom_url_scheme">com.radio929.app</string>
+</resources>
