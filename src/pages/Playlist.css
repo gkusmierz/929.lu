@@ -1,0 +1,57 @@
+.playlist-content {
+  --background: #121212;
+  --color: white;
+  background-image: radial-gradient(circle at center, rgba(100, 100, 100, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.playlist-title {
+  font-size: 32px;
+  font-weight: bold;
+  padding: 20px;
+  margin: 0;
+  color: white;
+}
+
+.playlist-list {
+  --background: transparent;
+}
+
+.playlist-item {
+  --background: rgba(44, 62, 80, 0.7);
+  --border-radius: 8px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.song-thumbnail {
+  --border-radius: 4px;
+  overflow: hidden;
+  width: 60px;
+  height: 60px;
+}
+
+.song-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.song-time {
+  font-size: 14px;
+  color: #a0a0a0;
+  margin-bottom: 4px;
+}
+
+.song-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.song-artist {
+  font-size: 14px;
+  color: #a0a0a0;
+  margin: 4px 0 0 0;
+}

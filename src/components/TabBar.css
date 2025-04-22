@@ -1,0 +1,21 @@
+.main-tabs {
+  --background: #2c3e50;
+  --color: #a0a0a0;
+}
+
+.main-tabs ion-tab-button {
+  --color: #a0a0a0;
+  --color-selected: white;
+}
+
+.main-tabs ion-tab-button.tab-selected {
+  --background: #2c3e50;
+}
+
+.main-tabs ion-tab-button.tab-selected ion-icon {
+  color: white;
+}
+
+.main-tabs ion-tab-button ion-icon {
+  font-size: 24px;
+}
