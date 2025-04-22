@@ -90,7 +90,149 @@ npm run test.unit
 
 ## Mobile Development
 
-This project uses Capacitor for building native mobile applications. For detailed instructions on building and running the mobile versions, refer to the [Capacitor documentation](https://capacitorjs.com/docs/getting-started).
+This project uses Capacitor for building native mobile applications. Below are detailed instructions for setting up and running the application on iOS, Android, and web platforms.
+
+### Web Target
+
+To run the application in a web browser:
+
+```bash
+# Install dependencies (if not already done)
+npm install
+
+# Start the development server
+npm run dev
+```
+
+The application will be available at [http://localhost:5173](http://localhost:5173) by default.
+
+### iOS Target
+
+To run the application on iOS simulator or device:
+
+#### Prerequisites
+- macOS operating system
+- Xcode 14 or higher installed
+- iOS development tools and SDKs
+- CocoaPods installed (`sudo gem install cocoapods`)
+
+#### Setup and Run
+
+1. Install dependencies (if not already done):
+```bash
+npm install
+```
+
+2. Build the web assets:
+```bash
+npm run build
+```
+
+3. Sync the web build with the iOS project:
+```bash
+npx cap sync ios
+```
+
+4. Open the iOS project in Xcode:
+```bash
+npx cap open ios
+```
+
+5. In Xcode:
+   - Select a simulator or connected device from the device dropdown
+   - Click the "Play" button to build and run the app
+   - Alternatively, use `Cmd+R` to run the app
+
+#### Live Reload for Development
+
+For development with live reload:
+
+```bash
+# Run dev server with external network option
+npm run dev -- --host
+
+# Sync and open the iOS project with live reload
+npx cap sync ios
+npx cap run ios -l --external
+```
+
+### Android Target
+
+To run the application on Android emulator or device:
+
+#### Prerequisites
+- Android Studio installed
+- Android SDK installed and configured
+- JDK 11 or higher installed
+- Gradle 7.x or higher
+
+#### Setup and Run
+
+1. Install dependencies (if not already done):
+```bash
+npm install
+```
+
+2. Build the web assets:
+```bash
+npm run build
+```
+
+3. Sync the web build with the Android project:
+```bash
+npx cap sync android
+```
+
+4. Open the Android project in Android Studio:
+```bash
+npx cap open android
+```
+
+5. In Android Studio:
+   - Wait for Gradle sync to complete
+   - Select an emulator or connected device from the device dropdown
+   - Click the "Run" button (green triangle) to build and run the app
+
+#### Live Reload for Development
+
+For development with live reload:
+
+```bash
+# Run dev server with external network option
+npm run dev -- --host
+
+# Sync and open the Android project with live reload
+npx cap sync android
+npx cap run android -l --external
+```
+
+### Common Issues and Troubleshooting
+
+#### iOS
+- If you encounter CocoaPods related errors, try:
+  ```bash
+  cd ios/App
+  pod install --repo-update
+  ```
+- For signing issues, ensure your Apple Developer account is properly configured in Xcode
+
+#### Android
+- For Gradle sync issues, try:
+  ```bash
+  cd android
+  ./gradlew clean
+  ```
+- Ensure your Android SDK and JDK paths are correctly set in Android Studio
+
+### Updating Native Code
+
+After making changes to the native configurations (in `capacitor.config.ts` or plugins):
+
+```bash
+npx cap sync
+```
+
+This will update both iOS and Android projects with the latest web code and configuration.
 
 ## Additional Information
 
