@@ -1,9 +1,13 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'com.radio929.app',
   appName: '929.lu',
-  webDir: 'dist'
+  webDir: 'dist',
+  ios: {
+    scheme: 'App929',
+    backgroundColor: '#ffffff'
+  }
 };
 
 export default config;
