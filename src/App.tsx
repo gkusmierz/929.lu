@@ -4,6 +4,7 @@ import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Register from './pages/Register';
 import TabBar from './components/TabBar';
+import { AudioProvider } from './services/AudioContext';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -57,18 +58,20 @@ const App: React.FC = () => {
   
   return (
     <IonApp>
-      <IonReactRouter>
-        {!isRegistered ? (
-          <Register onRegister={handleRegistration} />
-        ) : (
-          <IonRouterOutlet>
-            <Route path="/tabs" render={() => <TabBar />} />
-            <Route exact path="/">
-              <Redirect to="/tabs" />
-            </Route>
-          </IonRouterOutlet>
-        )}
-      </IonReactRouter>
+      <AudioProvider>
+        <IonReactRouter>
+          {!isRegistered ? (
+            <Register onRegister={handleRegistration} />
+          ) : (
+            <IonRouterOutlet>
+              <Route path="/tabs" render={() => <TabBar />} />
+              <Route exact path="/">
+                <Redirect to="/tabs" />
+              </Route>
+            </IonRouterOutlet>
+          )}
+        </IonReactRouter>
+      </AudioProvider>
     </IonApp>
   );
 };
