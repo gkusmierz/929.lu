@@ -1,6 +1,5 @@
 import UIKit
 import Capacitor
-import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -8,25 +7,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Register our custom plugins
-        registerPlugins()
-        
-        // Configure AVAudioSession for background playback
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-            try AVAudioSession.sharedInstance().setActive(true)
-            print("AVAudioSession successfully configured for background playback")
-        } catch {
-            print("Failed to set up AVAudioSession: \(error)")
-        }
-        
+        // Override point for customization after application launch.
         return true
-    }
-    
-    // Register all Capacitor plugins, including our custom ones
-    func registerPlugins() {
-        // Add AudioHelperPlugin to the registry
-        CAPLog.print("Registering AudioHelperPlugin")
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

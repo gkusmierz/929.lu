@@ -94,31 +94,22 @@
   margin-top: 30px;
 }
 
-.format-switch {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .format-aac, .format-mp3 {
-  margin: 0 10px;
+  margin: 0 15px;
   font-size: 16px;
   color: #a0a0a0;
-  transition: color 0.3s ease;
 }
 
-.format-aac.active, .format-mp3.active {
+.format-aac.active {
   color: #e74c3c;
-  font-weight: bold;
 }
 
-/* Custom styling for Ionic toggle */
-ion-toggle {
-  --background: #333333;
-  --background-checked: #333333;
-  --handle-background: #a0a0a0;
-  --handle-background-checked: #e74c3c;
-  --handle-width: 20px;
-  --handle-height: 20px;
-  --handle-border-radius: 50%;
+.format-aac.active::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: #e74c3c;
+  border-radius: 50%;
+  margin: 5px auto 0;
 }
