@@ -17,13 +17,14 @@ import { useState, useEffect } from 'react';
 const Home: React.FC = () => {
     const [isPlaying, setIsPlaying] = useState<boolean>(false);
     const [useAAC, setUseAAC] = useState<boolean>(true);
-    const audioService = new AudioService();
-
-        const subscription = audioService.isPlaying$.subscribe(isPlaying => {
-            setIsPlaying(isPlaying);
+    
+    useEffect(() => {
+        const subscription = audioService.isPlaying$.subscribe((isPlaying) => {
+          setIsPlaying(isPlaying);
         });
+    
         return () => subscription.unsubscribe();
-    }, []);
+      }, []);
 
     const togglePlayback = () => {
         const streamUrl = useAAC ? 'https://radio.929.lu/mobile-aacp' : 'https://radio.929.lu/mobile-mp3';
